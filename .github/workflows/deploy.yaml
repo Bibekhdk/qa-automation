@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write  # 👈 required for gh-pages push
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -27,6 +30,19 @@ jobs:
           pip install -r requirements.txt
           pip install allure-pytest
 
+      - name: Install Google Chrome
+        run: |
+          sudo apt update
+          sudo apt install -y google-chrome-stable
+
+      - name: Install ChromeDriver
+        run: |
+          CHROMEDRIVER_VERSION=$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)
+          wget https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/chromedriver
+          sudo chmod +x /usr/local/bin/chromedriver
+
       - name: Install Allure CLI
         run: |
           wget https://github.com/allure-framework/allure2/releases/download/2.25.0/allure-2.25.0.tgz
@@ -42,6 +58,9 @@ jobs:
       - name: Generate Allure Report
         run: |
           allure generate allure-results --clean -o allure-report
+
+      - name: Check report folder
+        run: ls -la allure-report
 
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
