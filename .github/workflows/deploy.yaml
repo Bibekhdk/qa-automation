@@ -9,7 +9,7 @@ on:
       - main
 
 permissions:
-  contents: write  # 👈 required for gh-pages push
+  contents: write  #  required for gh-pages push
 
 jobs:
   test:
