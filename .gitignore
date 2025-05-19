@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.log
+*.env
+.env
+allure-results/
+allure-report/
+.idea/
+.vscode/
+chromedriver
+*.xlsx
