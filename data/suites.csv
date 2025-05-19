@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon May 19 11:42:33 UTC 2025","Mon May 19 11:42:39 UTC 2025","6496","Tests","test_logoutpage","TestLogout","","","TS_001_01: Cancel logout then confirm logout","Login → Cancel Logout → Confirm Logout → Verify redirect and toast."
