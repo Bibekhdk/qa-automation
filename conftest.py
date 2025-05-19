@@ -17,7 +17,7 @@ def init_driver(request):
         
         options = webdriver.ChromeOptions()
         options.add_argument(f"--user-data-dir={user_data_dir}")
-        options.add_argument("--headless")  # Run Chrome in headless mode for CI
+        #options.add_argument("--headless")  # Run Chrome in headless mode for CI
         options.add_argument("--disable-gpu")  # Disable GPU acceleration
         options.add_argument("--no-sandbox")  # Disable sandbox for CI environments
         options.add_argument("--remote-debugging-port=9222")  # Enable remote debugging
