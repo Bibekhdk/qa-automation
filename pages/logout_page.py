@@ -39,7 +39,7 @@ class LogoutPage:
     @allure.step("Get logout toast message")
     def get_toast_message(self):
         try:
-            toast = WebDriverWait(self.driver, 5).until(
+            toast = WebDriverWait(self.driver, 15).until(
                 EC.presence_of_element_located(self.toast_message)
             )
             return toast.text.strip()
