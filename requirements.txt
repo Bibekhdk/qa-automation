@@ -3,5 +3,4 @@ webdriver-manager
 pytest
 pytest-xdist
 pytest-html
-pytest-allure-adaptor
 allure-pytest
