@@ -19,7 +19,7 @@ def init_driver(request):
 
         options = webdriver.ChromeOptions()
         options.add_argument(f"--user-data-dir={user_data_dir}")
-        #options.add_argument("--headless=new")  # Important for CI environments
+        options.add_argument("--headless=new")  # Important for CI environments
         options.add_argument("--disable-gpu")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")  # Reduce resource usage in CI

@@ -51,7 +51,7 @@ jobs:
           sudo ln -s /opt/allure/bin/allure /usr/bin/allure
           allure --version
 
-      - name: Run Login/Logout tests
+      - name: Run Merchant tests
         run: |
           pytest Tests/merchant --alluredir=allure-results
 
