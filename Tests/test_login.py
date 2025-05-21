@@ -14,7 +14,7 @@ class TestLogin:
         ("admin1", ""),
         ("", "@dmin2929A"),
         ("", ""),
-        ("admin1", "@dmin2929A")
+        ("admin10", "Bibek2426@") #valid credentails
     ])
     def test_login_functionality(self, username, password):
         login_page = LoginPage(self.driver)

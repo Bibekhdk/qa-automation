@@ -4,3 +4,5 @@ class TestData:
     # If you're using Firefox, provide this only if needed manually.
     # Example for local driver path fallback (not required when using webdriver_manager):
     FIREFOX_EXECUTABLE_PATH = "/snap/bin/geckodriver"  # Modify this path as needed for your machine
+    USERNAME = "admin1"      # 🔁 Replace with real or test user
+    PASSWORD = "@dmin2929A"      # 🔁 Replace with real or test pass
