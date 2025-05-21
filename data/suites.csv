@@ -1,2 +1,5 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon May 19 11:42:33 UTC 2025","Mon May 19 11:42:39 UTC 2025","6496","Tests","test_logoutpage","TestLogout","","","TS_001_01: Cancel logout then confirm logout","Login → Cancel Logout → Confirm Logout → Verify redirect and toast."
+"passed","Wed May 21 11:43:03 UTC 2025","Wed May 21 11:43:15 UTC 2025","11944","Tests.merchant","test_edit_merchant","TestEditMerchant","","","Test to edit a merchant's email and verify success",""
+"passed","Wed May 21 11:42:52 UTC 2025","Wed May 21 11:43:02 UTC 2025","10365","Tests.merchant","test_delete_merchant","TestDeleteMerchant","","","test_delete_merchant[chrome]",""
+"passed","Wed May 21 11:43:16 UTC 2025","Wed May 21 11:43:27 UTC 2025","11161","Tests.merchant","test_merchant_optionalfield","TestAddMerchantValidation","","","test_required_field_validations[chrome]",""
+"passed","Wed May 21 11:42:33 UTC 2025","Wed May 21 11:42:51 UTC 2025","18779","Tests.merchant","test_add_merchant","TestAddMerchant","","","test_add_valid_merchant[chrome]","This test adds a merchant with valid data and verifies toast message"
