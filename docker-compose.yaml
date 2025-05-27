@@ -1,0 +1,62 @@
+version: '3'
+
+services:
+  selenium-hub:
+    image: selenium/hub:4.1.0
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"  # Expose the hub on port 4444
+    networks:
+      - ipn-automation_selenium-network
+
+  chrome:
+    image: selenium/node-chrome:4.1.0
+    container_name: chrome
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+      - "5900:5900"  # Expose VNC for Chrome
+    shm_size: 2g
+    networks:
+      - ipn-automation_selenium-network
+
+  firefox:
+    image: selenium/node-firefox:4.1.0
+    container_name: firefox
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+      - "5901:5900"  # Expose VNC for Firefox
+    shm_size: 2g
+    networks:
+      - ipn-automation_selenium-network
+
+  test-runner:
+    image: python:3.11
+    container_name: test-runner
+    depends_on:
+      - selenium-hub
+      - chrome
+      - firefox
+    volumes:
+      - .:/code  # Mount the current project directory
+    working_dir: /code
+    networks:
+      - ipn-automation_selenium-network
+    command: >
+      bash -c "pip install -r requirements.txt &&
+               pytest Tests/"
+    environment:
+      - PYTHONUNBUFFERED=1  # To see real-time output logs in docker logs
+
+networks:
+  ipn-automation_selenium-network:
+    driver: bridge

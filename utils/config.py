@@ -1,8 +1,8 @@
 class TestData:
     BASE_URL = "https://ipn-tms-staging.koilifin.com/auth"
+    DASHBOARD_URL = "https://ipn-tms-staging.koilifin.com/dashboard"
 
-    # If you're using Firefox, provide this only if needed manually.
-    # Example for local driver path fallback (not required when using webdriver_manager):
-    FIREFOX_EXECUTABLE_PATH = "/snap/bin/geckodriver"  # Modify this path as needed for your machine
-    USERNAME = "admin1"      # 🔁 Replace with real or test user
-    PASSWORD = "@dmin2929A"      # 🔁 Replace with real or test pass
+    USERNAME = "admin1"
+    PASSWORD = "@dmin2929A"
+
+    FIREFOX_EXECUTABLE_PATH = "/snap/bin/geckodriver"  # Optional if using local Firefox

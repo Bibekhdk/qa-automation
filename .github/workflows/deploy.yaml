@@ -9,8 +9,7 @@ on:
       - main
 
 permissions:
-  contents: write  #  required for gh-pages push
-
+  contents: write 
 jobs:
   test:
     runs-on: ubuntu-latest
